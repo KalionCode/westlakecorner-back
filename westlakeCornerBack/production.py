@@ -19,5 +19,19 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',                    
 ]
 
+INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic'
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'app',
+    'api',
+    'rest_framework',
+]
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  
+STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
