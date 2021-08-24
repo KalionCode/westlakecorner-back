@@ -5,7 +5,7 @@ import os
 # that Azure automatically creates for us.
 ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
 
-DEBUG = os.environ['DEBUG']
+DEBUG = (os.getenv('DEBUG', 'False') == 'True')
 SECRET_KEY = os.environ['SECRET_KEY']
 # WhiteNoise configuration
 MIDDLEWARE = [                                                                   
